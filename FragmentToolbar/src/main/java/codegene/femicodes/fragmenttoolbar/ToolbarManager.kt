@@ -18,7 +18,7 @@ class ToolbarManager constructor(
 
             if (builder.navIcon != -1){
                 fragmentToolbar.setNavigationIcon(builder.navIcon)
-                fragmentToolbar.setNavigationOnClickListener { builder.navClickListener.onNavIconClick() }
+                fragmentToolbar.setNavigationOnClickListener { builder.navClickListener?.onNavIconClick() }
             }
 
             if (builder.menuId != -1) {

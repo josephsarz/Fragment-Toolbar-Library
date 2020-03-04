@@ -9,7 +9,7 @@ import androidx.annotation.StringRes
 class FragmentToolbar(@IdRes val resId: Int,
                       @StringRes val title: Int,
                       val navIcon: Int,
-                      val navClickListener: OnNavigationIconClickListener,
+                      val navClickListener: OnNavigationIconClickListener?,
                       @MenuRes val menuId: Int,
                       val menuItems: MutableList<Int>,
                       val menuClicks: MutableList<MenuItem.OnMenuItemClickListener?>) {
@@ -23,7 +23,7 @@ class FragmentToolbar(@IdRes val resId: Int,
         private var menuId: Int = -1
         private var title: Int = -1
         private var navIcon: Int = -1
-        lateinit var navClickListener: OnNavigationIconClickListener
+        private var navClickListener: OnNavigationIconClickListener? = null
         private var menuItems: MutableList<Int> = mutableListOf()
         private var menuClicks: MutableList<MenuItem.OnMenuItemClickListener?> = mutableListOf()
 

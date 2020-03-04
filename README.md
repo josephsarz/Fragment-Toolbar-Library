@@ -25,15 +25,15 @@ allprojects {
 
 ## Library Usage
 
-### Add this lines to your BaseFragment
+### Step 1. Add this line to your BaseFragment
 
 `ToolbarManager(builder(), view).prepareToolbar()` to the overridden onViewCreated method
 
-### Then add an abstract builder method to your BaseFragment
+### Step 2. Then add an abstract builder method to your BaseFragment
 
 `protected abstract fun builder() : FragmentToolbar`
 
-### Your BaseFragment should look something like this
+### Step 3. Your BaseFragment should look something like this
 ```
 abstract class BaseFragment : Fragment(){
 
@@ -47,7 +47,7 @@ abstract class BaseFragment : Fragment(){
 }
 ```
 
-### Create your custom toolbar in your xml layout file
+### Step 4. Create your custom toolbar in your xml layout file
 
 ```
   <androidx.appcompat.widget.Toolbar
@@ -60,7 +60,7 @@ abstract class BaseFragment : Fragment(){
         
 ```
 
-### In your MainFragment Class extend the BaseFragment and implement the overridden builder method and link your toolbar
+### Step 5. In your MainFragment Class extend the BaseFragment and implement the overridden builder method and link your toolbar
 
 ```
 class FirstFragment : BaseFragment() 

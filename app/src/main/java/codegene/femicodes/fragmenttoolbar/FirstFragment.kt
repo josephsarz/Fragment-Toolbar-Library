@@ -33,11 +33,6 @@ class FirstFragment : BaseFragment() {
         return FragmentToolbar.Builder()
             .withId(R.id.song_toolbar)
             .withTitle(R.string.first_fragment_label)
-                .setNavigationIcon(R.drawable.ic_baseline_arrow_back_24, object : OnNavigationIconClickListener{
-                override fun onNavIconClick() {
-                    (activity as? MainActivity)?.onBackPressed()
-                }
-            })
             .build()
     }
 }
