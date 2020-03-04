@@ -1,0 +1,4 @@
+include ':FragmentToolbar'
+include ':fragmenttoolbar'
+include ':app'
+rootProject.name = "Fragment Toolbar"
