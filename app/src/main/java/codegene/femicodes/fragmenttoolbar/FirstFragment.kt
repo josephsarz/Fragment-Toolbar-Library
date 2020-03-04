@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class FirstFragment : BaseFragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -27,5 +27,17 @@ class FirstFragment : Fragment() {
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+    }
+
+    override fun builder(): FragmentToolbar {
+        return FragmentToolbar.Builder()
+            .withId(R.id.song_toolbar)
+            .withTitle(R.string.first_fragment_label)
+                .setNavigationIcon(R.drawable.ic_baseline_arrow_back_24, object : OnNavigationIconClickListener{
+                override fun onNavIconClick() {
+                    (activity as? MainActivity)?.onBackPressed()
+                }
+            })
+            .build()
     }
 }

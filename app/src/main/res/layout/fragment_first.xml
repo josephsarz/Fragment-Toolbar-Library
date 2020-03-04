@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/song_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        android:background="@color/colorWhite"
+        android:elevation="8dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
