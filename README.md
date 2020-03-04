@@ -1,18 +1,93 @@
 # Fragment-Toolbar-Library
 
-## Step 1. Add the JitPack repository to your build file
-## Add it in your root build.gradle at the end of repositories:
+## Project Setup
 
-`allprojects {`
-		`repositories {`
-			`...`
-			`maven { url 'https://jitpack.io' }`
-		`}`
-	`}`
+### Step 1. Add the JitPack repository to your build file
+### Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+### Step 2. Add the dependency
+
+```
+  dependencies {
+	        implementation 'com.github.josephsarz:Fragment-Toolbar-Library:0.1.0'
+	}
+```
 
 
-## Step 2. Add the dependency
-	
-  `dependencies {`
-	        `implementation 'com.github.josephsarz:Fragment-Toolbar-Library:Tag'`
-	`}`
+## Library Usage
+
+### Add this lines to your BaseFragment
+
+`ToolbarManager(builder(), view).prepareToolbar()` to the overridden onViewCreated method
+
+### Then add an abstract builder method to your BaseFragment
+
+`protected abstract fun builder() : FragmentToolbar`
+
+### Your BaseFragment should look something like this
+```
+abstract class BaseFragment : Fragment(){
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        ToolbarManager(builder(), view).prepareToolbar()
+    }
+
+    protected abstract fun builder() : FragmentToolbar
+
+}
+```
+
+### Create your custom toolbar in your xml layout file
+
+```
+  <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorWhite"
+        android:elevation="8dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
+        
+```
+
+### In your MainFragment Class extend the BaseFragment and implement the overridden builder method and link your toolbar
+
+```
+class FirstFragment : BaseFragment() 
+
+...
+
+override fun builder(): FragmentToolbar {
+        return FragmentToolbar.Builder()
+            .withId(R.id.toolbar)
+            .withTitle(R.string.first_fragment_label)
+                .setNavigationIcon(R.drawable.ic_baseline_arrow_back_24, object : OnNavigationIconClickListener{
+                override fun onNavIconClick() {
+                    (activity as? MainActivity)?.onBackPressed()
+                }
+            })
+            .build()
+    }
+
+```
+
+## Enjoy.
+
+
+
+
+
+
+
+
+
