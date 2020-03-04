@@ -18,7 +18,7 @@ allprojects {
 
 ```
   dependencies {
-	        implementation 'com.github.josephsarz:Fragment-Toolbar-Library:0.1.0'
+	        implementation 'com.github.josephsarz:Fragment-Toolbar-Library:0.1.1'
 	}
 ```
 
