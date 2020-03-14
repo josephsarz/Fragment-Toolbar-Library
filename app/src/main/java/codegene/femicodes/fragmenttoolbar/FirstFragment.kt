@@ -28,11 +28,11 @@ class FirstFragment : BaseFragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
-
-    override fun builder(): FragmentToolbar {
-        return FragmentToolbar.Builder()
-            .withId(R.id.song_toolbar)
-            .withTitle(R.string.first_fragment_label)
-            .build()
-    }
+//
+//    override fun builder(): FragmentToolbar {
+//        return FragmentToolbar.Builder()
+//            .withId(R.id.song_toolbar)
+//            .withTitle(R.string.first_fragment_label)
+//            .build()
+//    }
 }
