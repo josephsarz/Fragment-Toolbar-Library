@@ -29,15 +29,15 @@ class SecondFragment : BaseFragment() {
         }
     }
 
-    override fun builder(): FragmentToolbar {
-        return FragmentToolbar.Builder()
-            .withId(R.id.song_toolbar)
-            .withTitle(R.string.second_fragment_label)
-            .setNavigationIcon(R.drawable.ic_baseline_arrow_back_24, object : OnNavigationIconClickListener{
-                override fun onNavIconClick() {
-                    (activity as? MainActivity)?.onBackPressed()
-                }
-            })
-            .build()
-    }
+//    override fun builder(): FragmentToolbar {
+//        return FragmentToolbar.Builder()
+//            .withId(R.id.song_toolbar)
+//            .withTitle(R.string.second_fragment_label)
+//            .setNavigationIcon(R.drawable.ic_baseline_arrow_back_24, object : OnNavigationIconClickListener{
+//                override fun onNavIconClick() {
+//                    (activity as? MainActivity)?.onBackPressed()
+//                }
+//            })
+//            .build()
+//    }
 }
