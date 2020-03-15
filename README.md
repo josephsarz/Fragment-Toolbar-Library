@@ -1,3 +1,6 @@
+
+[![CircleCI](https://circleci.com/gh/josephsarz/Fragment-Toolbar-Library.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+
 # Fragment-Toolbar-Library
 
 ## Project Setup
